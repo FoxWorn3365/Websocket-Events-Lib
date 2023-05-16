@@ -1,0 +1,25 @@
+{
+    "name": "foxworn3365/websocket-events-lib",
+    "description": "The official PHP library for interacting with the WebSocket Events plugin for PocketMine-MP.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Cosma",
+            "email": "foxworn3365@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FoxWorn3365/Websocket-Events-Lib/issues",
+        "wiki": "https://github.com/FoxWorn3365/Websocket-Events-Lib/wiki",
+        "docs": "https://foxworn3365.github.io/Websocket-Events-Lib/docs/"
+    },
+    "require": {
+        "php": "^8.0",
+    },
+    "autoload": {
+        "psr-0": {
+            "FoxWorn3365\\WebSocketEvents": "src/FoxWorn3365/WebSocketEvents/",
+            "FoxWorn3365\\SocketManager": "src/FoxWorn3365/SocketManager/"
+        }
+    }
+}
