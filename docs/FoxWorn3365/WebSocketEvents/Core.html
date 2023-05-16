@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oxed - WebSocket Events Documentation</title>
+    <link href="https://resources.fcosma.it/w3.css" rel="stylesheet">
+    <link href="/docs/this.css" rel="stylesheet">
+  </head>
+  <body>
+  <!-- DOCUMENT -->
+   <div class='docs'>
+     <div class='docs-top'>
+       <div class='docs-title'><strong>WebSocket Events Documentation</strong></div>
+     </div>
+     <div class='docs-inheirt'>
+    <span class='docs-parent'><strong>FoxWorn3365</strong></span>
+    <div class='docs-child'>
+      <span class='docs-parent'>SocketManager</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/SocketManager/SharedMemoryClient'>SharedMemoryClient</a><br>
+        <a href='/docs/FoxWorn3365/SocketManager/SocketClient'>SocketClient</a><br>
+        </div>
+      </div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs/FoxWorn3365/WebSocketEvents/Core'>Core</a><br>
+      </div>
+    </div></div>
+    <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <span class='docs-parent'>Parts</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Block'>Block</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Entity'>Entity</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Item'>Item</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Player'>Player</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Server'>Server</a><br>
+        </div>
+      </div></div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'></span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs///connectivity'>connectivity</a><br>
+      <a href='/docs///index'>index</a><br>
+      <a href='/docs///examples'>examples</a><br>
+      </div>
+    </div></div>
+    <br>
+
+     </div>
+     <div class='docs-internal'>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,500;0,600;0,800;1,300&display=swap');
+
+body {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  background-color: #1c1c1c;
+  color: white;
+  text-align: center;
+}
+
+.docs {
+  text-align: left;
+  /*margin-left: 50px; - OUTDATED PARAM*/
+}
+
+.docs-title {
+  font-size: 65px;
+}
+
+.docs-class {
+  font-size: 45px;
+}
+
+.docs-parent {
+  font-size: 28px;
+  display: block;
+}
+
+.methods-others {
+  font-size: 25px;
+}
+
+.methods-type {
+  font-size: 22px;
+}
+
+.method-icon {
+  display: inline-block;
+  height: 40px;
+  font-size: 25px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #0f0f0f;
+  color: #b3b3b3;
+  font-weight: bold;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.docs-child {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.docs-internal {
+  width: 75%;
+  position: absolute;
+  right: 0px;
+}
+
+.docs-inheirt {
+  position: absolute;
+  width: 21%;
+  border-right: solid 1px white;
+  left: 0px;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.docs-top {
+  margin: 25px;
+  padding-left: 3%;
+  width: 100%;
+}
+
+.docs-map {
+  padding-right: 20px;
+  font-size: 20px;
+  background-color: #32353b;
+  border-radius: 15px;
+  padding: 12px;
+  width: fit-content;
+}
+
+.docs-link {
+  color: #23a4f4;
+  text-decoration: underline;
+}
+
+.docs-link-gray {
+  color: lightGray;
+  text-decoration: underline;
+}
+
+.docs-link-menu {
+  display: block;
+  color: #23a4f4;
+  text-decoration: none;
+}
+
+.docs-no-dec {
+  text-decoration: none;
+}
+
+.docs-abbl {
+  font-size: 20px;
+}
+
+.docs-subtitle {
+  font-size: 55px;
+}
+
+.doc {
+  padding: 25px;
+  opacity: 0.97;
+}
+
+.doc-title {
+  font-size: 40px;
+}
+
+.doc-content {
+  margin-left: 10px;
+  font-size: 19px;
+}
+
+.box {
+  margin-top: 7px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  padding: 6px;
+  font-size: 17px;
+  color: white;
+}
+
+.warn {
+  background-color: #cf9c29;
+  border-left: solid 6px #7c641c;
+}
+
+.box-title {
+  font-weight: 400;
+  font-size: 22px;
+  display: block;
+}
+
+.note {
+  background-color: #539ae1;
+  border-left: solid 6px #0c2cb9;
+}
+
+.code {
+  border-left: solid 6px black;
+  background-color: black;
+  color: lightGray;
+}
+
+.base {
+  border-left: solid 6px gray;
+}
+
+.important {
+  background: #bf1f1f;
+  border-left: solid 6px #ff0000;
+}
+
+.new-tag {
+  color: white;
+  display: inline;
+  border-radius: 20px;
+  padding: 2px;
+  background-color: #236136;
+  border: solid 1.5px #3ba55d;
+}
+
+.new-tag-margin {
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+.docs-arg {
+  background-color: #1f1f1f;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.docs-bottom-magic {
+  background-color: black;
+  border-radius: 25px;
+  position: absolute;
+  padding-left: 7px;
+  padding-right: 7px;
+  right: 10px;
+}
+</style>
+        <div class='docs-class'>FoxWorn3365\WebSocketEvents\<strong>Core </strong></div>
+        <div class='doc'>
+          <div class='method-icon'>P</div><a href='#m_socket' class='methods-others'><strong>$socket</strong></a><span class='methods-type'> : </span><br>
+          <div class='method-icon'>P</div><a href='#m_client' class='methods-others'><strong>$client</strong></a><span class='methods-type'> : SocketClient</span><br>
+          <div class='method-icon'>P</div><a href='#m_host' class='methods-others'><strong>$host</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>P</div><a href='#m_port' class='methods-others'><strong>$port</strong></a><span class='methods-type'> : int</span><br>
+          <div class='method-icon'>P</div><a href='#m_token' class='methods-others'><strong>$token</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>P</div><a href='#m_timeout' class='methods-others'><strong>$timeout</strong></a><span class='methods-type'> : int</span><br>
+          <div class='method-icon'>P</div><a href='#m_pid' class='methods-others'><strong>$pid</strong></a><span class='methods-type'> : int</span><br>
+          <div class='method-icon'>P</div><a href='#m_callbacks' class='methods-others'><strong>$callbacks</strong></a><span class='methods-type'> : object</span><br>
+          <div class='method-icon'>P</div><a href='#m_events' class='methods-others'><strong>$events</strong></a><span class='methods-type'> : array</span><br>
+          <div class='method-icon'>P</div><a href='#m_async' class='methods-others'><strong>$async</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>P</div><a href='#m_childs' class='methods-others'><strong>$childs</strong></a><span class='methods-type'> : array</span><br>
+          <div class='method-icon'>P</div><a href='#m_execution' class='methods-others'><strong>$execution</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>P</div><a href='#m_shared' class='methods-others'><strong>$shared</strong></a><span class='methods-type'> : int</span><br>
+          <div class='method-icon'>P</div><a href='#m_memory' class='methods-others'><strong>$memory</strong></a><span class='methods-type'> : SharedMemoryClient</span><br>
+          <br>
+          <div class='method-icon'>M</div><a href='#__construct()' class='methods-others'><strong>__construct()</strong></a><span class='methods-type'> : </span><br>
+          <div class='method-icon'>M</div><a href='#generaterandomstring()' class='methods-others'><strong>generateRandomString()</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>M</div><a href='#on()' class='methods-others'><strong>on()</strong></a><span class='methods-type'> : void</span><br>
+          <div class='method-icon'>M</div><a href='#connect()' class='methods-others'><strong>connect()</strong></a><span class='methods-type'> : void</span><br>
+          <div class='method-icon'>M</div><a href='#getserver()' class='methods-others'><strong>getServer()</strong></a><span class='methods-type'> : object|null</span><br>
+          <div class='method-icon'>M</div><a href='#loop()' class='methods-others'><strong>loop()</strong></a><span class='methods-type'> : void</span><br>
+          <div class='method-icon'>M</div><a href='#exit()' class='methods-others'><strong>exit()</strong></a><span class='methods-type'> : void</span><br>
+          <div class='method-icon'>M</div><a href='#handshake()' class='methods-others'><strong>handshake()</strong></a><span class='methods-type'> : bool</span><br>
+
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_socket' id='m_socket'><strong>$socket</strong></a>
+          <div class='doc-content'>
+             The raw php socket
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #88fcd6'></span> $socket;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_client' id='m_client'><strong>$client</strong></a>
+          <div class='doc-content'>
+             The socket client
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #88fcd6'>SocketClient</span> $client;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_host' id='m_host'><strong>$host</strong></a>
+          <div class='doc-content'>
+             Hostname of the websocket server
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>string</span> $host;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_port' id='m_port'><strong>$port</strong></a>
+          <div class='doc-content'>
+             Port of the websocket server
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>int</span> $port;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_token' id='m_token'><strong>$token</strong></a>
+          <div class='doc-content'>
+             Password (or token) of the websocket server
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>string</span> $token;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_timeout' id='m_timeout'><strong>$timeout</strong></a>
+          <div class='doc-content'>
+             Timeout of the connection
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>int</span> $timeout =  5;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_pid' id='m_pid'><strong>$pid</strong></a>
+          <div class='doc-content'>
+             The child (heartbeat) PID
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>int</span> $pid;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_callbacks' id='m_callbacks'><strong>$callbacks</strong></a>
+          <div class='doc-content'>
+             The object where all callbacks are stored
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>object</span> $callbacks;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_events' id='m_events'><strong>$events</strong></a>
+          <div class='doc-content'>
+             All available events are listed here
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>array</span> $events =  [</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_async' id='m_async'><strong>$async</strong></a>
+          <div class='doc-content'>
+             You can run this asyncronously via pcntl (like heartbeat)
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>bool</span> $async =  false;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_childs' id='m_childs'><strong>$childs</strong></a>
+          <div class='doc-content'>
+             All child process will be put here if class:$async is true
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>array</span> $childs =  [];</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_execution' id='m_execution'><strong>$execution</strong></a>
+          <div class='doc-content'>
+             Whether or not the client is in the loop
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>bool</span> $execution =  true;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_shared' id='m_shared'><strong>$shared</strong></a>
+          <div class='doc-content'>
+             The server data shared memory ID
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>int</span> $shared =  491094;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_memory' id='m_memory'><strong>$memory</strong></a>
+          <div class='doc-content'>
+             The shared memory client class
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #88fcd6'>SharedMemoryClient</span> $memory;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#__construct()' id='__construct()'><strong>__construct()</strong></a>
+          <div class='doc-content'>
+             The construct class, here you must define some connectivity options
+            <div class='box code'><span style='color: black'></span> __construct( <span style='color: #68a1fc'>string</span> $host , <span style='color: #68a1fc'>int</span> $port , <span style='color: #68a1fc'>string</span> $token )</div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$host <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>string</span></span> :  The host. Use "localhost" if you're in the same machine<br>$port <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>int</span></span> :  The port<br>$token <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>string</span></span> :  The access token defined in the plugin configuration
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#generaterandomstring()' id='generaterandomstring()'><strong>generateRandomString()</strong></a>
+          <div class='doc-content'>
+             A simple generator of random string for socket connection
+            <div class='box code'><span style='color: #5d7185'>protected</span> generateRandomString( <span style='color: #68a1fc'>int</span> $length=10 ) : <span style='color: #68a1fc'>string</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#on()' id='on()'><strong>on()</strong></a>
+          <div class='doc-content'>
+             Manage events by using this listener.
+            <div class='box code'><span style='color: #68a1fc'>public</span> on( <span style='color: #68a1fc'>string</span> $event , <span style='color: #68a1fc'>callable</span> $callback ) : <span style='color: #68a1fc'>void</span></div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$event <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>string</span></span> :  The name of the event, it must be in the class::$events array<br>$callback <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>callable</span></span> :  The function for this event. The only arg passed is an object (or stdClass) with all informations
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#connect()' id='connect()'><strong>connect()</strong></a>
+          <div class='doc-content'>
+             Connect to the websocket server
+            <div class='box code'><span style='color: #68a1fc'>public</span> connect( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>void</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#getserver()' id='getserver()'><strong>getServer()</strong></a>
+          <div class='doc-content'>
+             Read the server info from shared memory
+            <div class='box code'><span style='color: #68a1fc'>public</span> getServer( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>object<span style='color: gray;'> - </span>null</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#loop()' id='loop()'><strong>loop()</strong></a>
+          <div class='doc-content'>
+             The interal loop, this thing can work async if defined in class::$async
+            <div class='box code'><span style='color: #5d7185'>protected</span> loop( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>void</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#exit()' id='exit()'><strong>exit()</strong></a>
+          <div class='doc-content'>
+             Terminate the current process and childs if presents
+            <div class='box code'><span style='color: #68a1fc'>public</span> exit( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>void</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#handshake()' id='handshake()'><strong>handshake()</strong></a>
+          <div class='doc-content'>
+             Do an handshake to connect to the websocket server
+            <div class='box code'><span style='color: #5d7185'>protected</span> handshake( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>

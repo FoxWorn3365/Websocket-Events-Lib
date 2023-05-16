@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oxed - WebSocket Events Documentation</title>
+    <link href="https://resources.fcosma.it/w3.css" rel="stylesheet">
+    <link href="/docs/this.css" rel="stylesheet">
+  </head>
+  <body>
+  <!-- DOCUMENT -->
+   <div class='docs'>
+     <div class='docs-top'>
+       <div class='docs-title'><strong>WebSocket Events Documentation</strong></div>
+     </div>
+     <div class='docs-inheirt'>
+    <span class='docs-parent'><strong>FoxWorn3365</strong></span>
+    <div class='docs-child'>
+      <span class='docs-parent'>SocketManager</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/SocketManager/SharedMemoryClient'>SharedMemoryClient</a><br>
+        <a href='/docs/FoxWorn3365/SocketManager/SocketClient'>SocketClient</a><br>
+        </div>
+      </div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs/FoxWorn3365/WebSocketEvents/Core'>Core</a><br>
+      </div>
+    </div></div>
+    <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <span class='docs-parent'>Parts</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Block'>Block</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Entity'>Entity</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Item'>Item</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Player'>Player</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Server'>Server</a><br>
+        </div>
+      </div></div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'></span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs///connectivity'>connectivity</a><br>
+      <a href='/docs///index'>index</a><br>
+      <a href='/docs///examples'>examples</a><br>
+      </div>
+    </div></div>
+    <br>
+
+     </div>
+     <div class='docs-internal'>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,500;0,600;0,800;1,300&display=swap');
+
+body {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  background-color: #1c1c1c;
+  color: white;
+  text-align: center;
+}
+
+.docs {
+  text-align: left;
+  /*margin-left: 50px; - OUTDATED PARAM*/
+}
+
+.docs-title {
+  font-size: 65px;
+}
+
+.docs-class {
+  font-size: 45px;
+}
+
+.docs-parent {
+  font-size: 28px;
+  display: block;
+}
+
+.methods-others {
+  font-size: 25px;
+}
+
+.methods-type {
+  font-size: 22px;
+}
+
+.method-icon {
+  display: inline-block;
+  height: 40px;
+  font-size: 25px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #0f0f0f;
+  color: #b3b3b3;
+  font-weight: bold;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.docs-child {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.docs-internal {
+  width: 75%;
+  position: absolute;
+  right: 0px;
+}
+
+.docs-inheirt {
+  position: absolute;
+  width: 21%;
+  border-right: solid 1px white;
+  left: 0px;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.docs-top {
+  margin: 25px;
+  padding-left: 3%;
+  width: 100%;
+}
+
+.docs-map {
+  padding-right: 20px;
+  font-size: 20px;
+  background-color: #32353b;
+  border-radius: 15px;
+  padding: 12px;
+  width: fit-content;
+}
+
+.docs-link {
+  color: #23a4f4;
+  text-decoration: underline;
+}
+
+.docs-link-gray {
+  color: lightGray;
+  text-decoration: underline;
+}
+
+.docs-link-menu {
+  display: block;
+  color: #23a4f4;
+  text-decoration: none;
+}
+
+.docs-no-dec {
+  text-decoration: none;
+}
+
+.docs-abbl {
+  font-size: 20px;
+}
+
+.docs-subtitle {
+  font-size: 55px;
+}
+
+.doc {
+  padding: 25px;
+  opacity: 0.97;
+}
+
+.doc-title {
+  font-size: 40px;
+}
+
+.doc-content {
+  margin-left: 10px;
+  font-size: 19px;
+}
+
+.box {
+  margin-top: 7px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  padding: 6px;
+  font-size: 17px;
+  color: white;
+}
+
+.warn {
+  background-color: #cf9c29;
+  border-left: solid 6px #7c641c;
+}
+
+.box-title {
+  font-weight: 400;
+  font-size: 22px;
+  display: block;
+}
+
+.note {
+  background-color: #539ae1;
+  border-left: solid 6px #0c2cb9;
+}
+
+.code {
+  border-left: solid 6px black;
+  background-color: black;
+  color: lightGray;
+}
+
+.base {
+  border-left: solid 6px gray;
+}
+
+.important {
+  background: #bf1f1f;
+  border-left: solid 6px #ff0000;
+}
+
+.new-tag {
+  color: white;
+  display: inline;
+  border-radius: 20px;
+  padding: 2px;
+  background-color: #236136;
+  border: solid 1.5px #3ba55d;
+}
+
+.new-tag-margin {
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+.docs-arg {
+  background-color: #1f1f1f;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.docs-bottom-magic {
+  background-color: black;
+  border-radius: 25px;
+  position: absolute;
+  padding-left: 7px;
+  padding-right: 7px;
+  right: 10px;
+}
+</style>
+        <div class='docs-class'>FoxWorn3365\WebSocketEvents\Parts\<strong>Player </strong></div>
+        <div class='doc'>
+          <div class='method-icon'>P</div><a href='#m_fillable' class='methods-others'><strong>$fillable</strong></a><span class='methods-type'> : array</span><br>
+          <div class='method-icon'>P</div><a href='#m_aliases' class='methods-others'><strong>$aliases</strong></a><span class='methods-type'> : array</span><br>
+          <div class='method-icon'>P</div><a href='#m_username' class='methods-others'><strong>$username</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>P</div><a href='#m_uuid' class='methods-others'><strong>$uuid</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>P</div><a href='#m_socket' class='methods-others'><strong>$socket</strong></a><span class='methods-type'> : SocketClient</span><br>
+          <br>
+          <div class='method-icon'>M</div><a href='#__construct()' class='methods-others'><strong>__construct()</strong></a><span class='methods-type'> : </span><br>
+          <div class='method-icon'>M</div><a href='#execute()' class='methods-others'><strong>execute()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#chat()' class='methods-others'><strong>chat()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#damagearmor()' class='methods-others'><strong>damageArmor()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#disconnect()' class='methods-others'><strong>disconnect()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#extinguish()' class='methods-others'><strong>extinguish()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#heal()' class='methods-others'><strong>heal()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#jump()' class='methods-others'><strong>jump()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#kick()' class='methods-others'><strong>kick()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#kill()' class='methods-others'><strong>kill()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#knockback()' class='methods-others'><strong>knockBack()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#removecurrentwindows()' class='methods-others'><strong>removeCurrentWindows()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#removetitles()' class='methods-others'><strong>removeTitles()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#resetfalldistance()' class='methods-others'><strong>resetFallDistance()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#resettitles()' class='methods-others'><strong>resetTitles()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#respawn()' class='methods-others'><strong>respawn()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sendmessage()' class='methods-others'><strong>sendMessage()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sendpopup()' class='methods-others'><strong>sendPopup()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sendsubtitle()' class='methods-others'><strong>sendSubTitle()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sendtip()' class='methods-others'><strong>sendTip()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sendtitle()' class='methods-others'><strong>sendTitle()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sendtoastnotification()' class='methods-others'><strong>sendToastNotification()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setabsorption()' class='methods-others'><strong>setAbsorption()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setairsupplyticks()' class='methods-others'><strong>setAirSupplyTicks()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setallowflight()' class='methods-others'><strong>setAllowFlight()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setautojump()' class='methods-others'><strong>setAutoJump()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setbreathing()' class='methods-others'><strong>setBreathing()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setcanclimb()' class='methods-others'><strong>setCanClimb()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setcanclimbwalls()' class='methods-others'><strong>setCanClimbWalls()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setdisplayname()' class='methods-others'><strong>setDisplayName()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setfalldistance()' class='methods-others'><strong>setFallDistance()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setfireticks()' class='methods-others'><strong>setFireTicks()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setflying()' class='methods-others'><strong>setFlying()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setgamemode()' class='methods-others'><strong>setGamemode()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setgravity()' class='methods-others'><strong>setGravity()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sethasgravity()' class='methods-others'><strong>setHasGravity()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#sethealt()' class='methods-others'><strong>setHealt()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setimmobile()' class='methods-others'><strong>setImmobile()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setinvisible()' class='methods-others'><strong>setInvisible()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setmaxairsupplyticks()' class='methods-others'><strong>setMaxAirSupplyTicks()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setmaxhealth()' class='methods-others'><strong>setMaxHealth()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setspeed()' class='methods-others'><strong>setSpeed()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setnametag()' class='methods-others'><strong>setNameTag()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setnametagalwaysvisible()' class='methods-others'><strong>setNameTagAlwaysVisible()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setnametagvisible()' class='methods-others'><strong>setNameTagVisible()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setonfire()' class='methods-others'><strong>setOnFire()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setscale()' class='methods-others'><strong>setScale()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setscoretag()' class='methods-others'><strong>setScoreTag()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setsilent()' class='methods-others'><strong>setSilent()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setsneaking()' class='methods-others'><strong>setSneaking()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setsprinting()' class='methods-others'><strong>setSprinting()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setswimming()' class='methods-others'><strong>setSwimming()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setusingitem()' class='methods-others'><strong>setUsingItem()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#setviewdistance()' class='methods-others'><strong>setViewDistance()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#stopsleep()' class='methods-others'><strong>stopSleep()</strong></a><span class='methods-type'> : bool</span><br>
+          <div class='method-icon'>M</div><a href='#usehelditem()' class='methods-others'><strong>useHeldItem()</strong></a><span class='methods-type'> : bool</span><br>
+
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_fillable' id='m_fillable'><strong>$fillable</strong></a>
+          <div class='doc-content'>
+             All fields that can be filled
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>array</span> $fillable =  [</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_aliases' id='m_aliases'><strong>$aliases</strong></a>
+          <div class='doc-content'>
+             Aliases of fields
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>array</span> $aliases =  [</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_username' id='m_username'><strong>$username</strong></a>
+          <div class='doc-content'>
+             The user name
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>string</span> $username;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_uuid' id='m_uuid'><strong>$uuid</strong></a>
+          <div class='doc-content'>
+             The user UUID
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>string</span> $uuid;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_socket' id='m_socket'><strong>$socket</strong></a>
+          <div class='doc-content'>
+             The socket client
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #88fcd6'>SocketClient</span> $socket;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#__construct()' id='__construct()'><strong>__construct()</strong></a>
+          <div class='doc-content'>
+             Create this class from an object
+            <div class='box code'><span style='color: black'></span> __construct( <span style='color: #68a1fc'>object</span> $parent , <span style='color: #88fcd6'>SocketClient</span> $socket )</div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$parent <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>object</span></span> :  The parent object<br>$socket <span style='color: #88fcd6'><spanstyle='color:#88fcd6'>SocketClient</span></span> :  The socket client
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#execute()' id='execute()'><strong>execute()</strong></a>
+          <div class='doc-content'>
+             Execute a specific action (actually a PocketMine\Player function) for this player
+            <div class='box code'><span style='color: #b06400'>private</span> execute( <span style='color: #68a1fc'>string</span> $action , <span style='color: #68a1fc'>array</span> $args=[] ) : <span style='color: #68a1fc'>bool</span></div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$action <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>string</span></span> :  The action (capitalCase because it's a function)<br>$args=[] <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>array</span></span> :  Max two args in an array
+            <div class='box note'><span class='box-title'>Note</span> For now, execution can't be async also using pcntl!</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#chat()' id='chat()'><strong>chat()</strong></a>
+          <div class='doc-content'>
+             Send a message in the chat by the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> chat( <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$message <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>string</span></span> :  The message
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#damagearmor()' id='damagearmor()'><strong>damageArmor()</strong></a>
+          <div class='doc-content'>
+             Damage the player's armor
+            <div class='box code'><span style='color: #68a1fc'>public</span> damageArmor( <span style='color: #68a1fc'>float</span> $damage ) : <span style='color: #68a1fc'>bool</span></div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$damage <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>float</span></span> :  Damage value
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#disconnect()' id='disconnect()'><strong>disconnect()</strong></a>
+          <div class='doc-content'>
+             Disconnect (not kick) the player with a reason
+            <div class='box code'><span style='color: #68a1fc'>public</span> disconnect( <span style='color: #68a1fc'>string</span> $reason ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#extinguish()' id='extinguish()'><strong>extinguish()</strong></a>
+          <div class='doc-content'>
+             Stop a player from burning
+            <div class='box code'><span style='color: #68a1fc'>public</span> extinguish( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#heal()' id='heal()'><strong>heal()</strong></a>
+          <div class='doc-content'>
+             Add heal to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> heal( <span style='color: #68a1fc'>float</span> $amount ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#jump()' id='jump()'><strong>jump()</strong></a>
+          <div class='doc-content'>
+             Make the player jump
+            <div class='box code'><span style='color: #68a1fc'>public</span> jump( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#kick()' id='kick()'><strong>kick()</strong></a>
+          <div class='doc-content'>
+             Kick a player with a reason
+            <div class='box code'><span style='color: #68a1fc'>public</span> kick( <span style='color: #68a1fc'>string</span> $reason ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#kill()' id='kill()'><strong>kill()</strong></a>
+          <div class='doc-content'>
+             Kill a player
+            <div class='box code'><span style='color: #68a1fc'>public</span> kill( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#knockback()' id='knockback()'><strong>knockBack()</strong></a>
+          <div class='doc-content'>
+             Apply knockback effect to the user.
+            <div class='box code'><span style='color: #68a1fc'>public</span> knockBack( <span style='color: #68a1fc'>float</span> $x , <span style='color: #68a1fc'>float</span> $y ) : <span style='color: #68a1fc'>bool</span></div>
+            <div class='box note'><span class='box-title'>Note</span> The power will be 0.4</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#removecurrentwindows()' id='removecurrentwindows()'><strong>removeCurrentWindows()</strong></a>
+          <div class='doc-content'>
+             Close the current window
+            <div class='box code'><span style='color: #68a1fc'>public</span> removeCurrentWindows( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#removetitles()' id='removetitles()'><strong>removeTitles()</strong></a>
+          <div class='doc-content'>
+             Remove a title shown to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> removeTitles( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#resetfalldistance()' id='resetfalldistance()'><strong>resetFallDistance()</strong></a>
+          <div class='doc-content'>
+             $eset the fall distance
+            <div class='box code'><span style='color: #68a1fc'>public</span> resetFallDistance( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#resettitles()' id='resettitles()'><strong>resetTitles()</strong></a>
+          <div class='doc-content'>
+             Reset the shown title to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> resetTitles( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#respawn()' id='respawn()'><strong>respawn()</strong></a>
+          <div class='doc-content'>
+             Respawn the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> respawn( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sendmessage()' id='sendmessage()'><strong>sendMessage()</strong></a>
+          <div class='doc-content'>
+             Send a message to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> sendMessage( <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sendpopup()' id='sendpopup()'><strong>sendPopup()</strong></a>
+          <div class='doc-content'>
+             Send a popup to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> sendPopup( <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sendsubtitle()' id='sendsubtitle()'><strong>sendSubTitle()</strong></a>
+          <div class='doc-content'>
+             Send a subtitle to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> sendSubTitle( <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sendtip()' id='sendtip()'><strong>sendTip()</strong></a>
+          <div class='doc-content'>
+             Send a tip to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> sendTip( <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sendtitle()' id='sendtitle()'><strong>sendTitle()</strong></a>
+          <div class='doc-content'>
+             Send a title to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> sendTitle( <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sendtoastnotification()' id='sendtoastnotification()'><strong>sendToastNotification()</strong></a>
+          <div class='doc-content'>
+             Send a toast notification to the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> sendToastNotification( <span style='color: #68a1fc'>string</span> $title , <span style='color: #68a1fc'>string</span> $message ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setabsorption()' id='setabsorption()'><strong>setAbsorption()</strong></a>
+          <div class='doc-content'>
+             Absorp some damage
+            <div class='box code'><span style='color: #68a1fc'>public</span> setAbsorption( <span style='color: #68a1fc'>float</span> $absorption ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setairsupplyticks()' id='setairsupplyticks()'><strong>setAirSupplyTicks()</strong></a>
+          <div class='doc-content'>
+             Set the air supply when the player is underwather
+            <div class='box code'><span style='color: #68a1fc'>public</span> setAirSupplyTicks( <span style='color: #68a1fc'>int</span> $ticks ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setallowflight()' id='setallowflight()'><strong>setAllowFlight()</strong></a>
+          <div class='doc-content'>
+             Allows flight
+            <div class='box code'><span style='color: #68a1fc'>public</span> setAllowFlight( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setautojump()' id='setautojump()'><strong>setAutoJump()</strong></a>
+          <div class='doc-content'>
+             Set auto jump for the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> setAutoJump( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setbreathing()' id='setbreathing()'><strong>setBreathing()</strong></a>
+          <div class='doc-content'>
+             Set breathing for the player
+            <div class='box code'><span style='color: #68a1fc'>public</span> setBreathing( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setcanclimb()' id='setcanclimb()'><strong>setCanClimb()</strong></a>
+          <div class='doc-content'>
+             Can the player climb?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setCanClimb( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setcanclimbwalls()' id='setcanclimbwalls()'><strong>setCanClimbWalls()</strong></a>
+          <div class='doc-content'>
+             Can the player clib walls?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setCanClimbWalls( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setdisplayname()' id='setdisplayname()'><strong>setDisplayName()</strong></a>
+          <div class='doc-content'>
+             Update the display name
+            <div class='box code'><span style='color: #68a1fc'>public</span> setDisplayName( <span style='color: #68a1fc'>string</span> $name ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setfalldistance()' id='setfalldistance()'><strong>setFallDistance()</strong></a>
+          <div class='doc-content'>
+             Set the fall distance
+            <div class='box code'><span style='color: #68a1fc'>public</span> setFallDistance( <span style='color: #68a1fc'>float</span> $fallDistance ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setfireticks()' id='setfireticks()'><strong>setFireTicks()</strong></a>
+          <div class='doc-content'>
+             Set the fire ticks
+            <div class='box code'><span style='color: #68a1fc'>public</span> setFireTicks( <span style='color: #68a1fc'>int</span> $ticks ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setflying()' id='setflying()'><strong>setFlying()</strong></a>
+          <div class='doc-content'>
+             Can the player fly?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setFlying( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setgamemode()' id='setgamemode()'><strong>setGamemode()</strong></a>
+          <div class='doc-content'>
+             Update player's gamemode
+            <div class='box code'><span style='color: #68a1fc'>public</span> setGamemode( <span style='color: #68a1fc'>int</span> $gamemode ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setgravity()' id='setgravity()'><strong>setGravity()</strong></a>
+          <div class='doc-content'>
+             Wheather or not the player have a gravity
+            <div class='box code'><span style='color: #68a1fc'>public</span> setGravity( <span style='color: #68a1fc'>float</span> $gravity ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sethasgravity()' id='sethasgravity()'><strong>setHasGravity()</strong></a>
+          <div class='doc-content'>
+             Wheather or not the player have a gravity
+            <div class='box code'><span style='color: #68a1fc'>public</span> setHasGravity( <span style='color: #68a1fc'>bool</span> $value=true ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#sethealt()' id='sethealt()'><strong>setHealt()</strong></a>
+          <div class='doc-content'>
+             Set the player's healt
+            <div class='box code'><span style='color: #68a1fc'>public</span> setHealt( <span style='color: #68a1fc'>float</span> $amount ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setimmobile()' id='setimmobile()'><strong>setImmobile()</strong></a>
+          <div class='doc-content'>
+             Can the player move?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setImmobile( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setinvisible()' id='setinvisible()'><strong>setInvisible()</strong></a>
+          <div class='doc-content'>
+             Can the player be seen?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setInvisible( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setmaxairsupplyticks()' id='setmaxairsupplyticks()'><strong>setMaxAirSupplyTicks()</strong></a>
+          <div class='doc-content'>
+             Underwather things
+            <div class='box code'><span style='color: #68a1fc'>public</span> setMaxAirSupplyTicks( <span style='color: #68a1fc'>int</span> $ticks ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setmaxhealth()' id='setmaxhealth()'><strong>setMaxHealth()</strong></a>
+          <div class='doc-content'>
+             Set the player max healt
+            <div class='box code'><span style='color: #68a1fc'>public</span> setMaxHealth( <span style='color: #68a1fc'>int</span> $max ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setspeed()' id='setspeed()'><strong>setSpeed()</strong></a>
+          <div class='doc-content'>
+             Set the player speed
+            <div class='box code'><span style='color: #68a1fc'>public</span> setSpeed( <span style='color: #68a1fc'>float</span> $speed ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setnametag()' id='setnametag()'><strong>setNameTag()</strong></a>
+          <div class='doc-content'>
+             Update the player nametag
+            <div class='box code'><span style='color: #68a1fc'>public</span> setNameTag( <span style='color: #68a1fc'>string</span> $name ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setnametagalwaysvisible()' id='setnametagalwaysvisible()'><strong>setNameTagAlwaysVisible()</strong></a>
+          <div class='doc-content'>
+             Is the nametag always visible?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setNameTagAlwaysVisible( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setnametagvisible()' id='setnametagvisible()'><strong>setNameTagVisible()</strong></a>
+          <div class='doc-content'>
+             Is the nametag visible?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setNameTagVisible( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setonfire()' id='setonfire()'><strong>setOnFire()</strong></a>
+          <div class='doc-content'>
+             Is the player on fire?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setOnFire( <span style='color: #68a1fc'>int</span> $seconds ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setscale()' id='setscale()'><strong>setScale()</strong></a>
+          <div class='doc-content'>
+             Set the player scale
+            <div class='box code'><span style='color: #68a1fc'>public</span> setScale( <span style='color: #68a1fc'>float</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setscoretag()' id='setscoretag()'><strong>setScoreTag()</strong></a>
+          <div class='doc-content'>
+             Idk
+            <div class='box code'><span style='color: #68a1fc'>public</span> setScoreTag( <span style='color: #68a1fc'>string</span> $score ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setsilent()' id='setsilent()'><strong>setSilent()</strong></a>
+          <div class='doc-content'>
+             Can the player make noise?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setSilent( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setsneaking()' id='setsneaking()'><strong>setSneaking()</strong></a>
+          <div class='doc-content'>
+             Is the player seaking?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setSneaking( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setsprinting()' id='setsprinting()'><strong>setSprinting()</strong></a>
+          <div class='doc-content'>
+             Is the player sprinting?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setSprinting( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setswimming()' id='setswimming()'><strong>setSwimming()</strong></a>
+          <div class='doc-content'>
+             Is the player swimming?
+            <div class='box code'><span style='color: #68a1fc'>public</span> setSwimming( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setusingitem()' id='setusingitem()'><strong>setUsingItem()</strong></a>
+          <div class='doc-content'>
+             ---
+            <div class='box code'><span style='color: #68a1fc'>public</span> setUsingItem( <span style='color: #68a1fc'>bool</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#setviewdistance()' id='setviewdistance()'><strong>setViewDistance()</strong></a>
+          <div class='doc-content'>
+             Set the player view distance
+            <div class='box code'><span style='color: #68a1fc'>public</span> setViewDistance( <span style='color: #68a1fc'>int</span> $value ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#stopsleep()' id='stopsleep()'><strong>stopSleep()</strong></a>
+          <div class='doc-content'>
+             Stop sleep
+            <div class='box code'><span style='color: #68a1fc'>public</span> stopSleep( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#usehelditem()' id='usehelditem()'><strong>useHeldItem()</strong></a>
+          <div class='doc-content'>
+             Use the hold item
+            <div class='box code'><span style='color: #68a1fc'>public</span> useHeldItem( <span style='color: #88fcd6'></span>  ) : <span style='color: #68a1fc'>bool</span></div>
+          </div>
+        </div>

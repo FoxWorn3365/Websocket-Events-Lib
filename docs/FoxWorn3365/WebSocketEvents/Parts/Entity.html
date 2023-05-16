@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oxed - WebSocket Events Documentation</title>
+    <link href="https://resources.fcosma.it/w3.css" rel="stylesheet">
+    <link href="/docs/this.css" rel="stylesheet">
+  </head>
+  <body>
+  <!-- DOCUMENT -->
+   <div class='docs'>
+     <div class='docs-top'>
+       <div class='docs-title'><strong>WebSocket Events Documentation</strong></div>
+     </div>
+     <div class='docs-inheirt'>
+    <span class='docs-parent'><strong>FoxWorn3365</strong></span>
+    <div class='docs-child'>
+      <span class='docs-parent'>SocketManager</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/SocketManager/SharedMemoryClient'>SharedMemoryClient</a><br>
+        <a href='/docs/FoxWorn3365/SocketManager/SocketClient'>SocketClient</a><br>
+        </div>
+      </div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs/FoxWorn3365/WebSocketEvents/Core'>Core</a><br>
+      </div>
+    </div></div>
+    <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <span class='docs-parent'>Parts</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Block'>Block</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Entity'>Entity</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Item'>Item</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Player'>Player</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Server'>Server</a><br>
+        </div>
+      </div></div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'></span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs///connectivity'>connectivity</a><br>
+      <a href='/docs///index'>index</a><br>
+      <a href='/docs///examples'>examples</a><br>
+      </div>
+    </div></div>
+    <br>
+
+     </div>
+     <div class='docs-internal'>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,500;0,600;0,800;1,300&display=swap');
+
+body {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  background-color: #1c1c1c;
+  color: white;
+  text-align: center;
+}
+
+.docs {
+  text-align: left;
+  /*margin-left: 50px; - OUTDATED PARAM*/
+}
+
+.docs-title {
+  font-size: 65px;
+}
+
+.docs-class {
+  font-size: 45px;
+}
+
+.docs-parent {
+  font-size: 28px;
+  display: block;
+}
+
+.methods-others {
+  font-size: 25px;
+}
+
+.methods-type {
+  font-size: 22px;
+}
+
+.method-icon {
+  display: inline-block;
+  height: 40px;
+  font-size: 25px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #0f0f0f;
+  color: #b3b3b3;
+  font-weight: bold;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.docs-child {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.docs-internal {
+  width: 75%;
+  position: absolute;
+  right: 0px;
+}
+
+.docs-inheirt {
+  position: absolute;
+  width: 21%;
+  border-right: solid 1px white;
+  left: 0px;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.docs-top {
+  margin: 25px;
+  padding-left: 3%;
+  width: 100%;
+}
+
+.docs-map {
+  padding-right: 20px;
+  font-size: 20px;
+  background-color: #32353b;
+  border-radius: 15px;
+  padding: 12px;
+  width: fit-content;
+}
+
+.docs-link {
+  color: #23a4f4;
+  text-decoration: underline;
+}
+
+.docs-link-gray {
+  color: lightGray;
+  text-decoration: underline;
+}
+
+.docs-link-menu {
+  display: block;
+  color: #23a4f4;
+  text-decoration: none;
+}
+
+.docs-no-dec {
+  text-decoration: none;
+}
+
+.docs-abbl {
+  font-size: 20px;
+}
+
+.docs-subtitle {
+  font-size: 55px;
+}
+
+.doc {
+  padding: 25px;
+  opacity: 0.97;
+}
+
+.doc-title {
+  font-size: 40px;
+}
+
+.doc-content {
+  margin-left: 10px;
+  font-size: 19px;
+}
+
+.box {
+  margin-top: 7px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  padding: 6px;
+  font-size: 17px;
+  color: white;
+}
+
+.warn {
+  background-color: #cf9c29;
+  border-left: solid 6px #7c641c;
+}
+
+.box-title {
+  font-weight: 400;
+  font-size: 22px;
+  display: block;
+}
+
+.note {
+  background-color: #539ae1;
+  border-left: solid 6px #0c2cb9;
+}
+
+.code {
+  border-left: solid 6px black;
+  background-color: black;
+  color: lightGray;
+}
+
+.base {
+  border-left: solid 6px gray;
+}
+
+.important {
+  background: #bf1f1f;
+  border-left: solid 6px #ff0000;
+}
+
+.new-tag {
+  color: white;
+  display: inline;
+  border-radius: 20px;
+  padding: 2px;
+  background-color: #236136;
+  border: solid 1.5px #3ba55d;
+}
+
+.new-tag-margin {
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+.docs-arg {
+  background-color: #1f1f1f;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.docs-bottom-magic {
+  background-color: black;
+  border-radius: 25px;
+  position: absolute;
+  padding-left: 7px;
+  padding-right: 7px;
+  right: 10px;
+}
+</style>
+        <div class='docs-class'>FoxWorn3365\WebSocketEvents\Parts\<strong>Entity </strong></div>
+        <div class='doc'>
+          <div class='method-icon'>P</div><a href='#m_fillable' class='methods-others'><strong>$fillable</strong></a><span class='methods-type'> : array</span><br>
+          <div class='method-icon'>P</div><a href='#m_username' class='methods-others'><strong>$username</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>P</div><a href='#m_uuid' class='methods-others'><strong>$uuid</strong></a><span class='methods-type'> : string</span><br>
+          <div class='method-icon'>P</div><a href='#m_socket' class='methods-others'><strong>$socket</strong></a><span class='methods-type'> : SocketClient</span><br>
+          <br>
+          <div class='method-icon'>M</div><a href='#__construct()' class='methods-others'><strong>__construct()</strong></a><span class='methods-type'> : </span><br>
+
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_fillable' id='m_fillable'><strong>$fillable</strong></a>
+          <div class='doc-content'>
+             All fields that can be filled
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #68a1fc'>array</span> $fillable =  [</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_username' id='m_username'><strong>$username</strong></a>
+          <div class='doc-content'>
+             The user name
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>string</span> $username;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_uuid' id='m_uuid'><strong>$uuid</strong></a>
+          <div class='doc-content'>
+             The user UUID
+            <div class='box code'><span style='color: #68a1fc'>public</span> <span style='color: #68a1fc'>string</span> $uuid;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#m_socket' id='m_socket'><strong>$socket</strong></a>
+          <div class='doc-content'>
+             The socket client
+            <div class='box code'><span style='color: #5d7185'>protected</span> <span style='color: #88fcd6'>SocketClient</span> $socket;</div>
+          </div>
+        </div>
+        <div class='doc'>
+          <a class='doc-title' href='#__construct()' id='__construct()'><strong>__construct()</strong></a>
+          <div class='doc-content'>
+             Create this class from an object
+            <div class='box code'><span style='color: black'></span> __construct( <span style='color: #68a1fc'>object</span> $parent , <span style='color: #88fcd6'>SocketClient</span> $socket )</div>
+            <span style='font-size: 25px'><strong>Parameters</strong></span><br>$parent <span style='color: #88fcd6'><spanstyle='color:#68a1fc'>object</span></span> :  The parent object<br>$socket <span style='color: #88fcd6'><spanstyle='color:#88fcd6'>SocketClient</span></span> :  The socket client
+            <div class='box note'><span class='box-title'>Note</span> Actually this class is kinda useless because of the plugin: it can't manage actions with entities, blocks and items: only players and server</div>
+          </div>
+        </div>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oxed - WebSocket Events Documentation</title>
+    <link href="https://resources.fcosma.it/w3.css" rel="stylesheet">
+    <link href="/docs/this.css" rel="stylesheet">
+  </head>
+  <body>
+  <!-- DOCUMENT -->
+   <div class='docs'>
+     <div class='docs-top'>
+       <div class='docs-title'><strong>WebSocket Events Documentation</strong></div>
+     </div>
+     <div class='docs-inheirt'>
+    <span class='docs-parent'><strong>FoxWorn3365</strong></span>
+    <div class='docs-child'>
+      <span class='docs-parent'>SocketManager</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/SocketManager/SharedMemoryClient'>SharedMemoryClient</a><br>
+        <a href='/docs/FoxWorn3365/SocketManager/SocketClient'>SocketClient</a><br>
+        </div>
+      </div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs/FoxWorn3365/WebSocketEvents/Core'>Core</a><br>
+      </div>
+    </div></div>
+    <br>
+    <div class='docs-child'>
+    <span class='docs-parent'>WebSocketEvents</span>
+    <div class='docs-child'>
+      <span class='docs-parent'>Parts</span>
+      <div class='docs-child'>
+        <div class='docs-child'>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Block'>Block</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Entity'>Entity</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Item'>Item</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Player'>Player</a><br>
+        <a href='/docs/FoxWorn3365/WebSocketEvents/Parts/Server'>Server</a><br>
+        </div>
+      </div></div></div>
+      <br>
+    <div class='docs-child'>
+    <span class='docs-parent'></span>
+    <div class='docs-child'>
+      <div class='docs-child'>
+      <a href='/docs///connectivity'>connectivity</a><br>
+      <a href='/docs///index'>index</a><br>
+      <a href='/docs///examples'>examples</a><br>
+      </div>
+    </div></div>
+    <br>
+
+     </div>
+     <div class='docs-internal'>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,500;0,600;0,800;1,300&display=swap');
+
+body {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 200;
+  background-color: #1c1c1c;
+  color: white;
+  text-align: center;
+}
+
+.docs {
+  text-align: left;
+  /*margin-left: 50px; - OUTDATED PARAM*/
+}
+
+.docs-title {
+  font-size: 65px;
+}
+
+.docs-class {
+  font-size: 45px;
+}
+
+.docs-parent {
+  font-size: 28px;
+  display: block;
+}
+
+.methods-others {
+  font-size: 25px;
+}
+
+.methods-type {
+  font-size: 22px;
+}
+
+.method-icon {
+  display: inline-block;
+  height: 40px;
+  font-size: 25px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #0f0f0f;
+  color: #b3b3b3;
+  font-weight: bold;
+  margin-right: 5px;
+  padding-left: 10px;
+}
+
+.docs-child {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.docs-internal {
+  width: 75%;
+  position: absolute;
+  right: 0px;
+}
+
+.docs-inheirt {
+  position: absolute;
+  width: 21%;
+  border-right: solid 1px white;
+  left: 0px;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.docs-top {
+  margin: 25px;
+  padding-left: 3%;
+  width: 100%;
+}
+
+.docs-map {
+  padding-right: 20px;
+  font-size: 20px;
+  background-color: #32353b;
+  border-radius: 15px;
+  padding: 12px;
+  width: fit-content;
+}
+
+.docs-link {
+  color: #23a4f4;
+  text-decoration: underline;
+}
+
+.docs-link-gray {
+  color: lightGray;
+  text-decoration: underline;
+}
+
+.docs-link-menu {
+  display: block;
+  color: #23a4f4;
+  text-decoration: none;
+}
+
+.docs-no-dec {
+  text-decoration: none;
+}
+
+.docs-abbl {
+  font-size: 20px;
+}
+
+.docs-subtitle {
+  font-size: 55px;
+}
+
+.doc {
+  padding: 25px;
+  opacity: 0.97;
+}
+
+.doc-title {
+  font-size: 40px;
+}
+
+.doc-content {
+  margin-left: 10px;
+  font-size: 19px;
+}
+
+.box {
+  margin-top: 7px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  padding: 6px;
+  font-size: 17px;
+  color: white;
+}
+
+.warn {
+  background-color: #cf9c29;
+  border-left: solid 6px #7c641c;
+}
+
+.box-title {
+  font-weight: 400;
+  font-size: 22px;
+  display: block;
+}
+
+.note {
+  background-color: #539ae1;
+  border-left: solid 6px #0c2cb9;
+}
+
+.code {
+  border-left: solid 6px black;
+  background-color: black;
+  color: lightGray;
+}
+
+.base {
+  border-left: solid 6px gray;
+}
+
+.important {
+  background: #bf1f1f;
+  border-left: solid 6px #ff0000;
+}
+
+.new-tag {
+  color: white;
+  display: inline;
+  border-radius: 20px;
+  padding: 2px;
+  background-color: #236136;
+  border: solid 1.5px #3ba55d;
+}
+
+.new-tag-margin {
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+.docs-arg {
+  background-color: #1f1f1f;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.docs-bottom-magic {
+  background-color: black;
+  border-radius: 25px;
+  position: absolute;
+  padding-left: 7px;
+  padding-right: 7px;
+  right: 10px;
+}
+</style>
+          <span style='font-size: 20px'>@dir:/examples;</span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 45px'><strong>WebSocket Events Lib - Examples</strong></span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 35px'><strong>Listen to a event</strong></span><br>
+          <div class='box code'>
+          <span style='font-size: 20px'>use&nbsp;FoxWorn3365\WebSocketEvents\Core;</span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 20px'>require&nbsp;'include_all.php';</span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 20px'>$core&nbsp;=&nbsp;new&nbsp;Core("localhost",&nbsp;1991,&nbsp;"jhwebf384Bhsv98HJBv378jhbsdAjd");</span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 20px'>$core->on('player_jump',&nbsp;function(Core&nbsp;$core,&nbsp;object&nbsp;$data)&nbsp;{</span><br>
+          <span style='font-size: 20px'>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$data->player&nbsp;is&nbsp;a&nbsp;Part\Player&nbsp;object</span><br>
+          <span style='font-size: 20px'>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"\nPlayer&nbsp;{$data->player->name}&nbsp;jumped!";</span><br>
+          <span style='font-size: 20px'>});</span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 20px'>$core->on('ready',&nbsp;function(Core&nbsp;$core)&nbsp;{</span><br>
+          <span style='font-size: 20px'>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"READY";</span><br>
+          <span style='font-size: 20px'>});</span><br>
+          <span style='font-size: 20px'></span><br>
+          <span style='font-size: 20px'>$core->connect();</span><br>
+          </div>
