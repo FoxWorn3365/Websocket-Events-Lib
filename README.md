@@ -1,6 +1,9 @@
 # Websocket-Events-Lib
 The official PHP library for interacting with the WebSocket Events plugin for PocketMine-MP
 
+## Warning
+As the plugin this lib is in **ALPHA**
+
 ## Installation
 This library can be safely installed via composer: 
 ```
